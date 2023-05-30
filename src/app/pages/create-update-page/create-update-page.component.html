@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="registration-form">
+    <form class="form">
+      <div class="form-icon">
+        <span><i class="fas fa-user"></i></span>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" class="form-control item" [(ngModel)]="user.name" name="name"
+              [required]="required">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="lastname">Apellido:</label>
+            <input type="text" id="lastname" class="form-control item" [(ngModel)]="user.lastname" name="lastname"
+              [required]="required">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" class="form-control item" [(ngModel)]="user.email" name="email"
+              [required]="required">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="phone">Teléfono:</label>
+            <input type="text" id="phone" class="form-control item" [(ngModel)]="user.phone" name="phone"
+              [required]="required">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="typeUser">Tipo de Usuario:</label>
+        <select id="typeUser" class="form-control item" [(ngModel)]="user.typeUser.name" name="typeUser"
+          [required]="required">
+          <option *ngFor="let type of typeUsers" [value]="type.name">{{ type.name }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="saveUser()">{{ textButton }}</button>
+      <button type="submit" class="btn btn-secondary" (click)="returnPage()">Volver</button>
+    </form>
+  </div>
+</div>

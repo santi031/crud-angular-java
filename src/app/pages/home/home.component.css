@@ -1,0 +1,15 @@
+.table-container {
+    background-color: #fff;
+    margin: auto;
+    padding: 50px 70px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.container {
+    padding: 50px;
+}
+
+.btn {
+    margin: 0  10px;
+}

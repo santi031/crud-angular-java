@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="table-container">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo electrónico</th>
+            <th>Teléfono</th>
+            <th>Tipo de Usuario</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td> {{ user.name }} </td>
+            <td> {{ user.lastname }} </td>
+            <td> {{ user.email }} </td>
+            <td> {{ user.phone }} </td>
+            <td> {{ user.typeUser.name }} </td>
+            <td>
+              <button class="btn btn-primary" (click)="updateUser(user.idUsers)"><span><i class="fas fa-edit"></i></span></button>
+              <button class="btn btn-danger" (click)="openModal(content, user.idUsers)"><span><i class="fas fa-trash"></i></span></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-secondary" (click)="createUser()">Crear nuevo usuario</button>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">¿Esta seguro?</h4>
+  </div>
+  <div class="modal-body">
+    <!-- Contenido de la Ventana Modal -->
+    <p>Una vez eliminado este dato no se podrá recuperar.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Eliminar')">Eliminar</button>
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cerrar')">Cerrar</button>
+  </div>
+</ng-template>
